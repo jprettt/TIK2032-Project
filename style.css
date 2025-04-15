@@ -154,6 +154,18 @@ body {
   border-radius: 8px;
 }
 
+.profile-image {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    transition: opacity 0.3s ease;
+}
+
+.image-section:hover .profile-image {
+    content: url('image/foto lucu.jpg');
+}
 .text-section {
   flex: 1;
 }
