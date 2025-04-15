@@ -1,29 +1,37 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery - Website Sederhana</title>
+    <title>Gallery</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="galeri.html">Gallery</a>
-      <a href="blog.html">Blog</a>
-      <a href="kontak.html">Contact</a>
-    </nav>
+    <div class="header">
+      <div class="header-title">Gallery</div>
+      <div class="hamburger">☰</div>
+      <div class="nav-menu">
+        <div class="close-btn">✕</div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="galeri.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontak.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
 
-    <header>
-      <h1>Galeri Foto</h1>
-    </header>
+    <div class="container">
+      <section class="gallery-section">
+        <img src="image/tidur1.jpg" alt="Foto 1" />
+        <img src="image/tidur2.jpg" alt="Foto 2" />
+        <img src="image/tidur3.jpg" alt="Foto 3" />
+        <img src="image/tidur4.jpg" alt="Foto 1" />
+        <img src="image/tidur5.jpg" alt="Foto 2" />
+        <img src="image/tidur6.jpg" alt="Foto 3" />
+      </section>
+    </div>
 
-    <section>
-      <img src="image/foto teknologi.png" alt="Foto 1" />
-      <img src="image/foto seni.jpg" alt="Foto 2" />
-      <img src="image/foto olahraga.jpg" alt="Foto 3" />
-    </section>
-    <script src="script.js"></script>
+    <script src="javascript.js"></script>
   </body>
 </html>

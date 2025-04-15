@@ -1,109 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&family=Roboto:wght@400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-  }
-  
-  /* Navigation */
-  nav {
-    background: #333;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #ddd;
-  }
-  
-  /* Header */
-  header {
-    text-align: center;
-    padding: 50px;
-    background: #f4f4f4;
-  }
-  
-  /* Home page specific */
-  .home-header {
-    padding: 250px;
-  }
-  
-  /* Section styling */
-  section {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f5f5f5;
+  z-index: 1000;
+}
+
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  font-weight: 700;
+  color: #706D54;
+  font-family: 'Playfair Display', serif;
+  transition: all 0.3s ease;
+}
+
+.header-title:hover {
+  font-size: 40px;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  position: relative;
+  transition: color 0.3s ease;
+  color: #706D54;
+}
+
+.hamburger:hover {
+  color: #fff;
+}
+
+.hamburger:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #706D54;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #706D54;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.nav-menu ul li {
+  margin: 15px 0;
+  position: relative;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-menu ul li a:hover {
+  color: #706D54;
+}
+
+.nav-menu ul li a:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 80px auto 20px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.main-section {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.image-section {
+  flex: 1;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.text-section {
+  flex: 1;
+}
+
+.text-section h1 {
+  font-size: 48px;
+  color: #706D54;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+.text-section h3 {
+  font-size: 16px;
+  color: #666;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-section p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.gallery-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery-section img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.blog-post h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+.blog-post .preview p,
+.blog-post .full-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  text-align: left;
+}
+
+.read-more {
+  display: inline-block;
+  color: #706D54;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.read-more:hover {
+  color: #8a876b;
+}
+
+section p {
+  font-size: 16px;
+  text-align: center;
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 60px auto 10px auto;
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
   }
-  
-  /* Blog specific */
-  .blog-post {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .blog-post h2 {
-    color: #333;
-    border-bottom: 2px solid #f4f4f4;
-    padding-bottom: 10px;
-  }
-  
-  /* Gallery specific */
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .gallery img {
-    width: 300px;
-    height: auto;
-    margin: 10px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .gallery img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Contact specific */
-  .contact-info {
+
+  .main-section {
+    flex-direction: column;
     text-align: center;
-    font-size: 18px;
   }
-  
-  /* Footer */
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 20px;
+
+  .text-section h1 {
+    font-size: 36px;
   }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    header {
-      padding: 30px;
-    }
-    
-    .home-header {
-      padding: 100px 30px;
-    }
-    
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-    }
+
+  .text-section h3 {
+    font-size: 14px;
   }
+
+  .image-section img {
+    max-width: 100%;
+  }
+
+  .gallery-section img {
+    max-width: 100%;
+  }
+
+  .header-title {
+    font-size: 22px;
+  }
+}
