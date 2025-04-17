@@ -155,17 +155,18 @@ body {
 }
 
 .profile-image {
-    display: block;
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 8px;
-    transition: opacity 0.3s ease;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
 }
 
 .image-section:hover .profile-image {
-    content: url('image/foto lucu.jpg');
+  content: url('image/foto lucu.jpg');
 }
+
 .text-section {
   flex: 1;
 }
@@ -223,18 +224,77 @@ section {
 
 .blog-post {
   margin-bottom: 30px;
-  text-align: left;
 }
 
-.blog-post h2 {
-  font-size: 24px;
+.blog-post-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.blog-post-content.expanded {
+  background-color: #A08963;
+}
+
+.blog-post-content.expanded .blog-text-section h2,
+.blog-post-content.expanded .blog-text-section .preview p,
+.blog-post-content.expanded .blog-text-section .full-content p {
+  color: #fff;
+}
+
+.blog-post-content.expanded .read-more {
+  color: #fff;
+}
+
+.blog-post-content.expanded .read-more:hover {
+  color: #e0e0e0;
+}
+
+.blog-image-section {
+  flex: 1;
+}
+
+.blog-image-section img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-text-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Untuk memusatkan judul secara vertikal */
+  min-height: 200px; /* Berikan tinggi minimum agar judul terpusat dengan baik */
+  text-align: center; /* Teks default di tengah sebelum expanded */
+}
+
+.blog-text-section h2 {
+  font-size: 36px; /* Judul lebih besar sebelum expanded */
   margin-bottom: 10px;
   color: #333;
   font-family: 'Playfair Display', serif;
+  transition: font-size 0.3s ease, text-align 0.3s ease; /* Transisi untuk perubahan ukuran dan posisi */
 }
 
-.blog-post .preview p,
-.blog-post .full-content p {
+/* Saat expanded, judul mengecil dan rata kiri */
+.blog-post-content.expanded .blog-text-section {
+  text-align: left;
+}
+
+.blog-post-content.expanded .blog-text-section h2 {
+  font-size: 24px;
+  text-align: left;
+}
+
+.blog-text-section .preview p,
+.blog-text-section .full-content p {
   font-size: 16px;
   color: #555;
   line-height: 1.7;
@@ -273,6 +333,27 @@ section p {
   .main-section {
     flex-direction: column;
     text-align: center;
+  }
+
+  .blog-post-content {
+    flex-direction: column;
+    text-align: center; /* Default tengah pada mobile sebelum expanded */
+  }
+
+  .blog-text-section {
+    text-align: center; /* Default tengah pada mobile sebelum expanded */
+  }
+
+  .blog-post-content.expanded .blog-text-section {
+    text-align: left; /* Rata kiri setelah expanded, termasuk pada mobile */
+  }
+
+  .blog-post-content.expanded .blog-text-section h2 {
+    text-align: left; /* Judul rata kiri setelah expanded pada mobile */
+  }
+
+  .blog-image-section img {
+    max-width: 100%;
   }
 
   .text-section h1 {
